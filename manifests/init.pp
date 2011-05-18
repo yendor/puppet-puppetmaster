@@ -120,4 +120,16 @@ class puppetmaster {
         backup => false,
     }
 
+	file { "/etc/puppet/puppet.conf":
+		ensure => present,
+		content => template('puppetmaster/puppet.conf.erb'),
+		mode => 0600,
+		owner => root,
+		group => root,
+	}
+
+	package { "mysql-server":
+		ensure => present
+	}
+
 }
