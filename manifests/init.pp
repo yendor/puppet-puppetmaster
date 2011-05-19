@@ -127,9 +127,4 @@ class puppetmaster {
 		owner => root,
 		group => root,
 	}
-
-	package { "mysql-server":
-		ensure => present
-	}
-
 }
