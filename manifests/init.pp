@@ -123,8 +123,8 @@ class puppetmaster {
 	file { "/etc/puppet/puppet.conf":
 		ensure => present,
 		content => template('puppetmaster/puppet.conf.erb'),
-		mode => 0600,
-		owner => www-data,
-		group => www-data,
+		mode => 0644,
+		owner => root,
+		group => root,
 	}
 }
