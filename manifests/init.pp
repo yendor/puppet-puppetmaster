@@ -124,7 +124,7 @@ class puppetmaster {
 		ensure => present,
 		content => template('puppetmaster/puppet.conf.erb'),
 		mode => 0600,
-		owner => root,
-		group => root,
+		owner => www-data,
+		group => www-data,
 	}
 }
