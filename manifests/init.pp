@@ -131,15 +131,15 @@ class puppetmaster {
     augeas { "puppetmaster_configuration":
       context => "/files/etc/puppet/puppet.conf/master",
       changes => [
-        "set ssl_client_header SSL_CLIENT_S_DN"
-        "set ssl_client_verify_header SSL_CLIENT_VERIFY"
-        "set templatedir \$confdir/templates"
-        "set storeconfigs true"
-        "set dbadapter mysql"
-        "set dbuser ${storedconfig_db_user}"
-        "set dbpassword ${storedconfig_db_pass}"
-        "set dbserver ${storedconfig_db_host}"
-        "set dbsocket /var/run/mysqld/mysqld.sock"
+        "set ssl_client_header SSL_CLIENT_S_DN",
+        "set ssl_client_verify_header SSL_CLIENT_VERIFY",
+        "set templatedir \$confdir/templates",
+        "set storeconfigs true",
+        "set dbadapter mysql",
+        "set dbuser ${storedconfig_db_user}",
+        "set dbpassword ${storedconfig_db_pass}",
+        "set dbserver ${storedconfig_db_host}",
+        "set dbsocket /var/run/mysqld/mysqld.sock",
       ],
     }
 }
