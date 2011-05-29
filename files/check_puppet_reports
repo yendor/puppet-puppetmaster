@@ -18,6 +18,9 @@ failed = Set.new
 files.each do |file|
     report = YAML::parse_file(file)
     node = report.select('/metrics/resources/values')[0]
+    unless node
+      next
+    end
     metrics = node.transform
 
     metrics.each do |metric|
