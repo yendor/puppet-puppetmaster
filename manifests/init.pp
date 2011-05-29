@@ -120,11 +120,19 @@ class puppetmaster {
         backup => false,
     }
 
-	file { "/etc/puppet/puppet.conf":
-		ensure => present,
-		content => template('puppetmaster/puppet.conf.erb'),
-		mode => 0644,
-		owner => root,
-		group => root,
-	}
+  	file { "/etc/puppet/puppet.conf":
+    		ensure  => present,
+    		content => template('puppetmaster/puppet.conf.erb'),
+    		mode    => 0644,
+    		owner   => root,
+    		group   => root,
+  	}
+  	
+  	file { "/usr/local/bin/check_puppet_reports":
+  	    ensure => present,
+  	    source => "puppet:///modules/puppetmaster/check_puppet_reports",
+  	    mode   => 0755,
+  	    owner  => root,
+  	    group  => root,
+  	}
 }
