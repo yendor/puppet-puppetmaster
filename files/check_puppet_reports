@@ -28,8 +28,10 @@ files.each do |file|
     end
 end
 
-if failed
-  print "CRITICAL: " + failed.to_a.join(', ') + "\n"
-else
+if failed.empty?
   print "OK - No puppet runs failing\n"
+  exit(0)
+else
+  print "CRITICAL: " + failed.to_a.join(', ') + "\n"
+  exit(1)
 end
